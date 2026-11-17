@@ -1,0 +1,8 @@
+{
+  "appId": "com.entrenadores.pokedex",
+  "appName": "Pokedex Entrenadores",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}

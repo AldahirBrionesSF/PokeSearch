@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registro de Entrenadores · Pokédex</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Registro de Entrenadores</h1>
+  <p>Inicia sesión y consulta la ficha de tu Pokémon favorito.</p>
+</header>
+
+<main id="principal" class="autenticacion">
+  <section id="acceso">
+    <div id="vista-login">
+      <h2>Iniciar sesión</h2>
+      <p class="nota">Escribe el correo con el que guardaste tu perfil.</p>
+      <form id="form-login" novalidate>
+        <label for="correo-login">Correo electrónico</label>
+        <input type="email" id="correo-login" name="correo" placeholder="ash@correo.com">
+        <p class="error" id="error-login-correo"></p>
+        <button type="submit">Iniciar sesión</button>
+        <div id="mensaje-login" role="alert"></div>
+      </form>
+      <p class="alternativa">¿Aún no tienes perfil? <button type="button" class="enlace" id="ir-registro">Crear perfil</button></p>
+    </div>
+
+    <div id="vista-registro" hidden>
+      <h2>Crear perfil de entrenador</h2>
+      <form id="form-registro" novalidate>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej. Ash Ketchum">
+        <p class="error" id="error-registro-nombre"></p>
+
+        <label for="correo-registro">Correo electrónico</label>
+        <input type="email" id="correo-registro" name="correo" placeholder="ash@correo.com">
+        <p class="error" id="error-registro-correo"></p>
+
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" placeholder="10 a 99">
+        <p class="error" id="error-registro-edad"></p>
+
+        <label for="equipo">Equipo</label>
+        <select id="equipo" name="equipo">
+          <option value="">Selecciona un equipo</option>
+          <option value="Valor">Valor</option>
+          <option value="Sabiduría">Sabiduría</option>
+          <option value="Instinto">Instinto</option>
+        </select>
+        <p class="error" id="error-registro-equipo"></p>
+
+        <button type="submit">Guardar perfil</button>
+        <div id="mensaje-registro" role="alert"></div>
+      </form>
+      <p class="alternativa">¿Ya tienes perfil? <button type="button" class="enlace" id="ir-login">Iniciar sesión</button></p>
+    </div>
+    <p class="nota privacidad">Demostración: el perfil se guarda solo en este navegador. El acceso es por correo y no usa contraseña.</p>
+  </section>
+
+  <div id="busqueda" class="busqueda" hidden>
+    <div class="columna-busqueda">
+      <section>
+        <h2>Busca un Pokémon</h2>
+        <p id="saludo-entrenador" class="saludo"></p>
+        <form id="formulario" novalidate>
+          <label for="pokemon">Pokémon a buscar (nombre o número)</label>
+          <input type="text" id="pokemon" name="pokemon" placeholder="pikachu o 25">
+          <p class="error" id="error-pokemon"></p>
+          <button type="submit" id="boton">Buscar Pokémon</button>
+          <div id="mensaje" role="alert"></div>
+        </form>
+        <button type="button" id="cerrar-sesion" class="boton-secundario">Cerrar sesión</button>
+      </section>
+
+      <section id="juegos" aria-live="polite">
+        <h2>Juegos en los que aparece</h2>
+        <p class="vacio">Los juegos aparecerán cuando busques un Pokémon.</p>
+      </section>
+    </div>
+
+    <section id="resultado" aria-live="polite">
+      <h2>Ficha Pokémon</h2>
+      <p class="vacio">Escribe el nombre o número de un Pokémon para ver su ficha.</p>
+    </section>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

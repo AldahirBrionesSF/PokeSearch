@@ -1,0 +1,45 @@
+{
+  "name": "pokedex-entrenadores",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pokédex interactiva de entrenadores",
+  "main": "electron-main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "build:exe": "electron-builder --win portable",
+    "android:sync": "node scripts/prepare-android.js && cap sync android",
+    "android:apk": "npm run android:sync && cd android && gradlew.bat assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/core": "^8.6.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.6.0",
+    "electron": "^45.3.0",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "com.entrenadores.pokedex",
+    "productName": "Pokedex de Entrenadores",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "script.js",
+      "style.css",
+      "electron-main.cjs",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "artifactName": "Pokedex-Entrenadores-${version}-portable.${ext}"
+  }
+}
