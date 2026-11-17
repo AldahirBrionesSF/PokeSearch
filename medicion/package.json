@@ -1,0 +1,11 @@
+{
+  "name": "medicion-e3",
+  "private": true,
+  "description": "Mediciones del E3 (Valo Team)",
+  "scripts": {
+    "medir": "node medir.js .."
+  },
+  "dependencies": {
+    "jsdom": "^24.1.3"
+  }
+}
